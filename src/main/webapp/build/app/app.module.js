@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "./app.component", "./todo/components/task-list.component", "./about/components/about.component", "./todo/components/task.component", "./app.routing", "@angular/forms"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "./app.component", "./screens/welcomeScreen/welcomeScreen.component", "./app.routing", "@angular/forms", "./guards/auth.guard"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, app_component_1, task_list_component_1, about_component_1, task_component_1, app_routing_1, forms_1, AppModule;
+    var core_1, platform_browser_1, app_component_1, welcomeScreen_component_1, app_routing_1, forms_1, auth_guard_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -19,20 +19,17 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
             },
-            function (task_list_component_1_1) {
-                task_list_component_1 = task_list_component_1_1;
-            },
-            function (about_component_1_1) {
-                about_component_1 = about_component_1_1;
-            },
-            function (task_component_1_1) {
-                task_component_1 = task_component_1_1;
+            function (welcomeScreen_component_1_1) {
+                welcomeScreen_component_1 = welcomeScreen_component_1_1;
             },
             function (app_routing_1_1) {
                 app_routing_1 = app_routing_1_1;
             },
             function (forms_1_1) {
                 forms_1 = forms_1_1;
+            },
+            function (auth_guard_1_1) {
+                auth_guard_1 = auth_guard_1_1;
             }
         ],
         execute: function () {
@@ -50,12 +47,11 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
                     ],
                     declarations: [
                         app_component_1.AppComponent,
-                        task_component_1.TaskComponent,
-                        task_list_component_1.TaskListComponent,
-                        about_component_1.AboutComponent
+                        welcomeScreen_component_1.WelcomeScreen
                     ],
                     providers: [
-                        app_routing_1.appRoutingProviders
+                        app_routing_1.appRoutingProviders,
+                        auth_guard_1.AuthGuard
                     ],
                     bootstrap: [app_component_1.AppComponent]
                 })

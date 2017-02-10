@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/app/interfaces/registrationData.interface.ts"],"names":[],"mappings":";;;;;;QAOC,CAAC","file":"registrationData.interface.js","sourcesContent":["/**\r\n * Created by B51-80 on 2017-02-10.\r\n */\r\nexport interface RegistrationData {\r\n    username:string;\r\n    password:string;\r\n    confirm_password:string;\r\n}"],"sourceRoot":"/src"}
