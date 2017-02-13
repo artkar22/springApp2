@@ -3,7 +3,7 @@
 Build the project by running the following command:
 
     npm run clean & npm run build
-
+ 
 build directory will be created during the build
 5. Starting the application
 

@@ -1,0 +1,23 @@
+<header class="header col-sm-12">
+    <div class="row">
+        <div class="col-sm-6"><label class="col-sm-6">Login</label> <input id="log_username" class="col-sm-6" type="text" [(ngModel)]="logingData.username"></div>
+        <div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="log_password" class="password-field col-sm-6" type="password" [(ngModel)]="logingData.password"></div>
+    </div>
+    <button id="loggingIn">Zaloguj</button>
+</header>
+<body>
+{{logingData.username}}
+{{logingData.password}}
+<h1>Zarejestruj</h1>
+<div class="col-sm-6"><label class="col-sm-6">Email</label> <input id="reg_username" class="col-sm-6" type="text" [(ngModel)]="registrationData.username"></div>
+<div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="reg_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.password"></div>
+<div class="col-sm-6"><label class="col-sm-6">Potwierdź hasło</label><input id="confirm_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.confirm_password"></div>
+
+<button id="loggingIn" (click)="registerNewUser()">Zarejestruj</button>
+{{registrationData.username}}
+{{registrationData.password}}
+{{registrationData.confirm_password}}
+</body>
+<footer>
+</footer>
+
