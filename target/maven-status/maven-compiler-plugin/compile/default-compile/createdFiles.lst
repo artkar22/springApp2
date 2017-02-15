@@ -1,4 +1,4 @@
-testService\Greeting.class
-testService\Service.class
-Application.class
-HelloController.class
+spring\HelloController.class
+spring\testService\Greeting.class
+spring\testService\Service.class
+spring\Application.class
