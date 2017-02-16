@@ -13,7 +13,7 @@
 <div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="reg_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.password"></div>
 <div class="col-sm-6"><label class="col-sm-6">Potwierdź hasło</label><input id="confirm_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.confirm_password"></div>
 
-<button id="loggingIn" (click)="registerNewUser()">Zarejestruj</button>
+<button id="loggingIn" class="btn btn-primary pull-right" (click)="registerNewUser()" [disabled]="isRegisterFieldsFullfiled()">Zarejestruj</button>
 {{registrationData.username}}
 {{registrationData.password}}
 {{registrationData.confirm_password}}

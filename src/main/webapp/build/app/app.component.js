@@ -19,7 +19,7 @@ System.register(["@angular/core"], function (exports_1, context_1) {
                 function AppComponent() {
                 }
                 AppComponent.prototype.ngOnInit = function () {
-                    console.log("Application component initialized ...");
+                    console.log("spring.Application component initialized ...");
                 };
                 return AppComponent;
             }());

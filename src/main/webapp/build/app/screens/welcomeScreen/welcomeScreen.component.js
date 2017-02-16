@@ -20,10 +20,16 @@ System.register(["@angular/core"], function (exports_1, context_1) {
         execute: function () {
             WelcomeScreen = (function () {
                 function WelcomeScreen() {
+                    var _this = this;
                     this.logingData = {};
                     this.registrationData = {};
                     this.registerNewUser = function () {
                         console.log("registering...");
+                    };
+                    this.isRegisterFieldsFullfiled = function () {
+                        return !(_this.registrationData.username && _this.registrationData.username.length > 0 &&
+                            _this.registrationData.password && _this.registrationData.password.length > 0 &&
+                            _this.registrationData.confirm_password && _this.registrationData.confirm_password.length > 0);
                     };
                 }
                 WelcomeScreen.prototype.ngOnInit = function () {
