@@ -17,10 +17,17 @@ export class WelcomeScreen implements OnInit {
 
     constructor() {
     }
+
     ngOnInit():void {
         console.log("WELCOME!");
     }
+
     public registerNewUser = () => {
         console.log("registering...");
+    }
+    public isRegisterFieldsFullfiled = ():boolean => {
+        return !(this.registrationData.username && this.registrationData.username.length > 0 &&
+            this.registrationData.password && this.registrationData.password.length > 0 &&
+            this.registrationData.confirm_password && this.registrationData.confirm_password.length > 0);
     }
 }
