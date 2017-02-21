@@ -7,12 +7,15 @@ import {WelcomeScreen} from "./screens/welcomeScreen/welcomeScreen.component";
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from "@angular/forms";
 import {AuthGuard} from "./guards/auth.guard";
+import {UserService} from "./services/user.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        routing
+        routing,
+        HttpModule
     ],
     declarations: [
         AppComponent,
@@ -20,7 +23,8 @@ import {AuthGuard} from "./guards/auth.guard";
     ],
     providers: [
         appRoutingProviders,
-        AuthGuard
+        AuthGuard,
+        UserService,
     ],
     bootstrap: [AppComponent]
 })
