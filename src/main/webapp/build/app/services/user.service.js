@@ -1,7 +1,7 @@
 /**
  * Created by B51-80 on 2017-02-21.
  */
-System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map", "../consts/Consts"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -13,7 +13,7 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map"], fun
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, UserService;
+    var core_1, http_1, Consts_1, UserService;
     return {
         setters: [
             function (core_1_1) {
@@ -23,6 +23,9 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map"], fun
                 http_1 = http_1_1;
             },
             function (_1) {
+            },
+            function (Consts_1_1) {
+                Consts_1 = Consts_1_1;
             }
         ],
         execute: function () {/**
@@ -32,6 +35,10 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map"], fun
                 function UserService(http) {
                     this.http = http;
                 }
+                //for a testing
+                UserService.prototype.greetingServe = function () {
+                    return this.http.get(Consts_1.Consts.APP_PATH + '/greeting', this.jwt()).map(function (response) { return response.json(); });
+                };
                 UserService.prototype.getAll = function () {
                     return this.http.get('/api/users', this.jwt()).map(function (response) { return response.json(); });
                 };

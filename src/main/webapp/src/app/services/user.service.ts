@@ -6,10 +6,16 @@ import { Injectable } from '@angular/core';
 import { Headers, RequestOptions, Response, Http} from '@angular/http';
 import {RegistrationData} from "../interfaces/registrationData.interface";
 import 'rxjs/add/operator/map';
+import {Consts} from "../consts/Consts";
 
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
+
+    //for a testing
+    greetingServe() {
+        return this.http.get(Consts.APP_PATH + '/greeting', this.jwt()).map((response: Response) => response.json());
+    }
 
     getAll() {
         return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());

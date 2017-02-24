@@ -9,17 +9,21 @@ import {FormsModule} from "@angular/forms";
 import {AuthGuard} from "./guards/auth.guard";
 import {UserService} from "./services/user.service";
 import {HttpModule} from "@angular/http";
+import {InformModal} from "./modals/infoModal/informModal.component";
+import {ModalModule} from "ng2-bootstrap";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         routing,
-        HttpModule
+        HttpModule,
+        ModalModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        WelcomeScreen
+        WelcomeScreen,
+        InformModal
     ],
     providers: [
         appRoutingProviders,

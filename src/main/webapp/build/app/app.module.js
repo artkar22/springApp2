@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "./app.component", "./screens/welcomeScreen/welcomeScreen.component", "./app.routing", "@angular/forms", "./guards/auth.guard", "./services/user.service", "@angular/http"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "./app.component", "./screens/welcomeScreen/welcomeScreen.component", "./app.routing", "@angular/forms", "./guards/auth.guard", "./services/user.service", "@angular/http", "./modals/infoModal/informModal.component", "ng2-bootstrap"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, app_component_1, welcomeScreen_component_1, app_routing_1, forms_1, auth_guard_1, user_service_1, http_1, AppModule;
+    var core_1, platform_browser_1, app_component_1, welcomeScreen_component_1, app_routing_1, forms_1, auth_guard_1, user_service_1, http_1, informModal_component_1, ng2_bootstrap_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -36,6 +36,12 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (informModal_component_1_1) {
+                informModal_component_1 = informModal_component_1_1;
+            },
+            function (ng2_bootstrap_1_1) {
+                ng2_bootstrap_1 = ng2_bootstrap_1_1;
             }
         ],
         execute: function () {
@@ -50,11 +56,13 @@ System.register(["@angular/core", "@angular/platform-browser", "./app.component"
                         platform_browser_1.BrowserModule,
                         forms_1.FormsModule,
                         app_routing_1.routing,
-                        http_1.HttpModule
+                        http_1.HttpModule,
+                        ng2_bootstrap_1.ModalModule.forRoot()
                     ],
                     declarations: [
                         app_component_1.AppComponent,
-                        welcomeScreen_component_1.WelcomeScreen
+                        welcomeScreen_component_1.WelcomeScreen,
+                        informModal_component_1.InformModal
                     ],
                     providers: [
                         app_routing_1.appRoutingProviders,
