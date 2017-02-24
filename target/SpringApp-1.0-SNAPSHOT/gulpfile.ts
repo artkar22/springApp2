@@ -6,7 +6,6 @@ const tsc = require("gulp-typescript");
 const sourcemaps = require('gulp-sourcemaps');
 const tsProject = tsc.createProject("tsconfig.json");
 const tslint = require('gulp-tslint');
-
 /**
  * Remove build directory.
  */
@@ -56,7 +55,10 @@ gulp.task("libs", () => {
             'reflect-metadata/Reflect.js',
             'rxjs/**/*.js',
             'zone.js/dist/**',
-            '@angular/**/bundles/**'
+            '@angular/**/bundles/**',
+            'moment/**',
+            'ng2-bootstrap/**/*.umd.js',
+            'traceur/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });
