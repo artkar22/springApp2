@@ -18,7 +18,11 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             // other libraries
-            'rxjs': 'npm:rxjs'
+            'rxjs': 'npm:rxjs',
+            'ng2-bootstrap': 'npm:ng2-bootstrap',
+            'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+            'moment': 'npm:moment',
+            'traceur': 'npm:traceur'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -27,6 +31,22 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'moment': {
+                defaultExtension: 'js'
+            },
+            'ng2-bootstrap': {
+                format: 'cjs',
+                main: 'bundles/ng2-bootstrap.umd.js',
+                defaultExtension: 'js'
+            },
+            'angular2-in-memory-web-api': {
+                main: './index.js',
+                defaultExtension: 'js'
+            },
+            'traceur': {
+                main: './src/traceur.js',
                 defaultExtension: 'js'
             }
         }

@@ -1,4 +1,10 @@
-spring\HelloController.class
 spring\testService\Greeting.class
+spring\database\dao\security\impl\UserDAOImpl.class
+spring\database\dao\w.class
+spring\database\models\security\User.class
+spring\database\models\as.class
+spring\Consts\Consts.class
+spring\database\dao\security\UserDAO.class
 spring\testService\Service.class
 spring\Application.class
+spring\security\RegisterNewUserCtrl.class
