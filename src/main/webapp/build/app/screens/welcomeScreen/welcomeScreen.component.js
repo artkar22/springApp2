@@ -10,7 +10,7 @@ System.register(["@angular/core", "../../services/user.service", "../../modals/i
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, user_service_1, informModal_component_1, WelcomeScreen;
+    var core_1, user_service_1, informModal_component_1, registerSuccessTitle, registerFailureTitle, registerSuccessMessage, registerFailureMessage, WelcomeScreen;
     return {
         setters: [
             function (core_1_1) {
@@ -24,23 +24,33 @@ System.register(["@angular/core", "../../services/user.service", "../../modals/i
             }
         ],
         execute: function () {
+            registerSuccessTitle = "Gratulujemy!";
+            registerFailureTitle = "Ostrzeżenie!";
+            registerSuccessMessage = "Rejestracja powiodła się!";
+            registerFailureMessage = "Rejestracja nie powiodła się!";
             WelcomeScreen = (function () {
                 function WelcomeScreen(userService) {
                     var _this = this;
                     this.userService = userService;
                     this.logingData = {};
                     this.registrationData = {};
+                    this.registerTitle = "Uwaga";
+                    this.registerMessage = "";
                     this.registerNewUser = function () {
-                        _this.informModal.show();
-                        // this.userService.create(this.registrationData)
-                        //     .subscribe(
-                        //         data => {
-                        //             // set success message and pass true paramater to persist the message after redirecting to the login page
-                        //             //here info modal
-                        //         },
-                        //         error => {
-                        //             //hereInfoModal
-                        //         });
+                        var vm = _this;
+                        _this.userService.create(_this.registrationData)
+                            .subscribe(function (data) {
+                            vm.registerTitle = registerSuccessTitle;
+                            vm.registerMessage = registerSuccessMessage;
+                            vm.informModal.show();
+                            // set success message and pass true paramater to persist the message after redirecting to the login page
+                            //here info moda
+                        }, function (error) {
+                            //hereInfoModal
+                            vm.registerTitle = registerFailureTitle;
+                            vm.registerMessage = registerFailureMessage;
+                            vm.informModal.show();
+                        });
                     };
                     this.isRegisterFieldsFullfiled = function () {
                         return !(_this.registrationData.username && _this.registrationData.username.length > 0 &&
@@ -50,6 +60,15 @@ System.register(["@angular/core", "../../services/user.service", "../../modals/i
                 }
                 WelcomeScreen.prototype.ngOnInit = function () {
                     console.log("WELCOME!");
+                };
+                WelcomeScreen.prototype.logIn = function () {
+                    this.userService.greetingServe().subscribe(function (data) {
+                        console.log(data);
+                        // set success message and pass true paramater to persist the message after redirecting to the login page
+                        //here info moda
+                    }, function (error) {
+                        console.log("błąd");
+                    });
                 };
                 return WelcomeScreen;
             }());

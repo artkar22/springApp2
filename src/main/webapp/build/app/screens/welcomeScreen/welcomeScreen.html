@@ -1,24 +1,28 @@
-<header class="header col-sm-12">
-    <div class="row">
-        <div class="col-sm-6"><label class="col-sm-6">Login</label> <input id="log_username" class="col-sm-6" type="text" [(ngModel)]="logingData.username"></div>
-        <div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="log_password" class="password-field col-sm-6" type="password" [(ngModel)]="logingData.password"></div>
-    </div>
-    <button id="loggingIn">Zaloguj</button>
-</header>
-<body>
-{{logingData.username}}
-{{logingData.password}}
-<h1>Zarejestruj</h1>
-<div class="col-sm-6"><label class="col-sm-6">Email</label> <input id="reg_username" class="col-sm-6" type="text" [(ngModel)]="registrationData.username"></div>
-<div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="reg_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.password"></div>
-<div class="col-sm-6"><label class="col-sm-6">Potwierdź hasło</label><input id="confirm_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.confirm_password"></div>
+<div id = "wrapper" class="loggin-wrapper">
+    <header class="header col-sm-12">
+        <div class="row">
+            <h1>TITLE</h1>
+            <div class="pull-right col-sm-4">
+                <div class="col-sm-6"><label >Login</label><input id="log_username" type="text" [(ngModel)]="logingData.username"></div>
+                <div class="col-sm-6"><label >Hasło</label><input id="log_password" class="password-field" type="password" [(ngModel)]="logingData.password"></div>
+            </div>
+        </div>
+        <button id="loggingIn" class="pull-right" (click)="logIn()">Zaloguj</button>
+    </header>
+    <body>
+    {{logingData.username}}
+    {{logingData.password}}
+        <h2>Zarejestruj</h2>
+        <div class="col-sm-6"><label class="col-sm-6">Email</label> <input id="reg_username" class="col-sm-6" type="text" [(ngModel)]="registrationData.username"></div>
+        <div class="col-sm-6"><label class="col-sm-6">Hasło</label><input id="reg_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.password"></div>
+        <div class="col-sm-6"><label class="col-sm-6">Potwierdź hasło</label><input id="confirm_password" class="password-field col-sm-6" type="password" [(ngModel)]="registrationData.confirm_password"></div>
 
-<button id="loggingIn" class="btn btn-primary pull-right" (click)="registerNewUser()" [disabled]="isRegisterFieldsFullfiled()">Zarejestruj</button>
-{{registrationData.username}}
-{{registrationData.password}}
-{{registrationData.confirm_password}}
-<inform-modal></inform-modal>
-</body>
-<footer>
-</footer>
+        <button id="loggingIn" class="btn btn-primary pull-right" (click)="registerNewUser()" [disabled]="isRegisterFieldsFullfiled()">Zarejestruj</button>
+        {{registrationData.username}}
+    {{registrationData.password}}
+    {{registrationData.confirm_password}}
+    <inform-modal [modalsTitle]=registerTitle [modalsMessage]=registerMessage></inform-modal>
+    </body>
+    <footer></footer>
+</div>
 

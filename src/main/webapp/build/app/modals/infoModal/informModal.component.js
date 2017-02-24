@@ -10,12 +10,11 @@ System.register(["@angular/core", "ng2-bootstrap"], function (exports_1, context
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, core_2, ng2_bootstrap_1, InformModal;
+    var core_1, ng2_bootstrap_1, InformModal;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
-                core_2 = core_1_1;
             },
             function (ng2_bootstrap_1_1) {
                 ng2_bootstrap_1 = ng2_bootstrap_1_1;
@@ -34,13 +33,21 @@ System.register(["@angular/core", "ng2-bootstrap"], function (exports_1, context
                 return InformModal;
             }());
             __decorate([
-                core_2.ViewChild('childModal'),
+                core_1.ViewChild('childModal'),
                 __metadata("design:type", ng2_bootstrap_1.ModalDirective)
             ], InformModal.prototype, "childModal", void 0);
+            __decorate([
+                core_1.Input(),
+                __metadata("design:type", String)
+            ], InformModal.prototype, "modalsMessage", void 0);
+            __decorate([
+                core_1.Input(),
+                __metadata("design:type", String)
+            ], InformModal.prototype, "modalsTitle", void 0);
             InformModal = __decorate([
                 core_1.Component({
                     selector: 'inform-modal',
-                    template: 'informModal.tpl.html'
+                    templateUrl: './app/modals/infoModal/informModal.tpl.html'
                 })
             ], InformModal);
             exports_1("InformModal", InformModal);
