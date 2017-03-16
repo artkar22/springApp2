@@ -1,4 +1,4 @@
-4. Building the project
+ 4. Building the project
 
 Build the project by running the following command:
 
