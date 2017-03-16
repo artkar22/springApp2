@@ -46,7 +46,7 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/map", "../
                     return this.http.get('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
                 };
                 UserService.prototype.create = function (user) {
-                    return this.http.post('/register', user, this.jwt()).map(function (response) { return response.json(); });
+                    return this.http.post(Consts_1.Consts.APP_PATH + '/register', user, this.jwt()).map(function (response) { return response.json(); });
                 };
                 // update(user: User) {
                 //     return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response: Response) => response.json());
