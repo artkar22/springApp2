@@ -26,7 +26,7 @@ export class UserService {
     }
 
     create(user: RegistrationData) {
-        return this.http.post('/register', user, this.jwt()).map((response: Response) => response.json());
+        return this.http.post(Consts.APP_PATH + '/register', user, this.jwt()).map((response: Response) => response.json());
     }
 
     // update(user: User) {

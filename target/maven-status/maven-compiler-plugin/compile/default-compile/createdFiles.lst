@@ -8,3 +8,4 @@ spring\database\dao\security\UserDAO.class
 spring\testService\Service.class
 spring\Application.class
 spring\security\RegisterNewUserCtrl.class
+spring\security\dto\InfoDTO.class
